@@ -19,7 +19,15 @@
 
 ### 🏁 Basic Example  
 ```kotlin
+# use this function to show toast wherever you want 
 ToastManager.showInfo(
     title = "Info",
     message = "Hello, Jetpack Compose! 🚀",
 )
+
+# Put ToastContainer inside your parent component like MainActivity
+
+setContent{
+  ...
+  ToastContainer()
+}  
