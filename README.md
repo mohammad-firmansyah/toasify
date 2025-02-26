@@ -10,7 +10,8 @@
 - 🌙 **Dark Mode Support** – Automatically adapts to theme settings  
 
 ## 📸 Preview  
-🚀 **(Add GIFs or screenshots here)**  
+![image](https://github.com/user-attachments/assets/aa20c7fe-71cb-4433-8e7a-00bf0847303e)
+  
 
 ## 📌 Usage  
 
