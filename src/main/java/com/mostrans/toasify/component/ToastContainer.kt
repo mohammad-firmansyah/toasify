@@ -32,10 +32,12 @@ fun ToastContainer() {
 
     Box(
         modifier = Modifier
-            .zIndex(9999999999f)
+            .zIndex(Float.MAX_VALUE)
             .fillMaxSize()
-            .padding(vertical = 40.dp,
-                horizontal = 20.dp),
+            .padding(
+                vertical = 40.dp,
+                horizontal = 20.dp
+            ),
         contentAlignment = Alignment.TopCenter
     ) {
         AnimatedVisibility(
@@ -44,7 +46,12 @@ fun ToastContainer() {
             exit = fadeOut() + slideOutVertically(targetOffsetY = { -50 })
         ) {
             toastState?.let { toast ->
-                CustomToast(message = toast.message, type = toast.type)
+                CustomToast(
+                    title = toast.title.toString(),
+                    message = toast.message.toString(),
+                    type = toast.type,
+                    content = toast.content
+                )
             }
         }
     }
