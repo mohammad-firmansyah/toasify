@@ -19,7 +19,7 @@
 
 ### 🏁 Basic Example  
 ```kotlin
-Toasify.show(
+ToastManager.showInfo(
+    title = "Info",
     message = "Hello, Jetpack Compose! 🚀",
-    type = ToastType.Success
 )
