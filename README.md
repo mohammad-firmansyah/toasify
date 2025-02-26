@@ -10,7 +10,9 @@
 - 🌙 **Dark Mode Support** – Automatically adapts to theme settings  
 
 ## 📸 Preview  
-![image](https://github.com/user-attachments/assets/aa20c7fe-71cb-4433-8e7a-00bf0847303e)
+![image](https://github.com/user-attachments/assets/a658cea1-3915-4a20-93db-d0bb8c002203)
+
+
   
 
 ## 📌 Usage  
