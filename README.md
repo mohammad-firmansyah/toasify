@@ -27,7 +27,7 @@ ToastManager.showInfo(
 
 // before using Toastmanager you must put toast container at outer of your component layer
 setContent{
-    .... others .....
+    ....
 
     ToastContainer()
 }
