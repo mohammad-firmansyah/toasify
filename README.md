@@ -11,13 +11,17 @@
 
 ## 📸 Preview  
 
-
+![Screen_recording_20250311_144056](https://github.com/user-attachments/assets/86fc6b48-69cc-49ab-b21d-6262b19efe0e)
 
   
 
 ## 📌 Usage  
 
+### 🏁 Installation
+https://jitpack.io/#mohammad-firmansyah/toasify/1.0.0
+
 ### 🏁 Basic Example  
 ```kotlin
 ToastManager.showInfo(
     message = "Hello, Jetpack Compose! 🚀")
+
