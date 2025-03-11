@@ -10,7 +10,7 @@
 - 🌙 **Dark Mode Support** – Automatically adapts to theme settings  
 
 ## 📸 Preview  
-![image](https://github.com/user-attachments/assets/a658cea1-3915-4a20-93db-d0bb8c002203)
+
 
 
   
@@ -19,7 +19,5 @@
 
 ### 🏁 Basic Example  
 ```kotlin
-Toasify.show(
-    message = "Hello, Jetpack Compose! 🚀",
-    type = ToastType.Success
-)
+ToastManager.showInfo(
+    message = "Hello, Jetpack Compose! 🚀")
