@@ -45,7 +45,6 @@ import com.mostrans.toasify.ui.Primary3
 import com.mostrans.toasify.ui.Warning3
 import com.mostrans.toasify.utils.ToastType
 
-
 @Composable
 fun CustomToast(
     title: String = "",
@@ -66,15 +65,15 @@ fun CustomToast(
         }
 
         ToastType.Error -> {
-            ToastDanger(modifier = modifier)
+            ToastDanger(modifier = modifier, title = title, message = message)
         }
 
         ToastType.Warning -> {
-            ToastWarning(modifier = modifier)
+            ToastWarning(modifier = modifier, title = title, message = message)
         }
 
         ToastType.Default -> {
-            ToastSuccess()
+            ToastSuccess(modifier = modifier, title = title, message = message)
         }
 
         ToastType.Loading -> {
@@ -191,7 +190,6 @@ fun ToastLoading(modifier: Modifier = Modifier, message: String = "Loading") {
             .zIndex(Float.MAX_VALUE)
             .fillMaxWidth()
             .defaultMinSize(minHeight = 50.dp)
-            .border(1.dp, Neutral5, MaterialTheme.shapes.small)
             .clip(MaterialTheme.shapes.small)
             .background(MaterialTheme.colorScheme.background),
         verticalArrangement = Arrangement.SpaceBetween

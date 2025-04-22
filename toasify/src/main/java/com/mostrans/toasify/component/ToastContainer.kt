@@ -17,10 +17,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.mostrans.toasify.utils.ToastManager
+import com.mostrans.toasify.utils.ToastPosition
+import com.mostrans.toasify.utils.ToastType
+import com.mostrans.toasify.utils.toAlignType
 import kotlinx.coroutines.delay
 
 @Composable
-fun ToastContainer() {
+fun ToastContainer(
+    position: ToastPosition = ToastPosition.Top
+) {
     val toastState by ToastManager.toastState.collectAsState()
 
     LaunchedEffect(toastState) {
@@ -38,7 +43,7 @@ fun ToastContainer() {
                 vertical = 40.dp,
                 horizontal = 20.dp
             ),
-        contentAlignment = Alignment.TopCenter
+        contentAlignment = if(toastState?.position != null) toastState?.position?.toAlignType()  ?: Alignment.TopCenter else position.toAlignType()
     ) {
         AnimatedVisibility(
             visible = toastState != null,
@@ -49,7 +54,7 @@ fun ToastContainer() {
                 CustomToast(
                     title = toast.title.toString(),
                     message = toast.message.toString(),
-                    type = toast.type,
+                    type = ToastType.Warning,
                     content = toast.content
                 )
             }
