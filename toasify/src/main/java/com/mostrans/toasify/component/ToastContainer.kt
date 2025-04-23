@@ -54,7 +54,7 @@ fun ToastContainer(
                 CustomToast(
                     title = toast.title.toString(),
                     message = toast.message.toString(),
-                    type = ToastType.Warning,
+                    type = toast.type,
                     content = toast.content
                 )
             }
