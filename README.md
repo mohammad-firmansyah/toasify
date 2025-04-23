@@ -25,7 +25,8 @@ https://jitpack.io/#mohammad-firmansyah/toasify/1.0.0
 ToastManager.showInfo(
     message = "Hello, Jetpack Compose! 🚀")
 
-// before using Toastmanager you must put toast container at outer of your component layer
+// before using Toastmanager, ensure the ToastContainer is added to the parent component
+
 setContent{
     ....
 
