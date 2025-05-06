@@ -18,7 +18,23 @@
 ## 📌 Usage  
 
 ### 🏁 Installation
-https://jitpack.io/#mohammad-firmansyah/toasify/1.0.0
+build.gradle.kts (:app)
+```
+	dependencies {
+	        implementation("com.github.mohammad-firmansyah:toasify:Tag")
+	}
+```
+
+settings.gradle.kts
+```
+ dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url = uri("https://jitpack.io") }
+		}
+	}
+```
 
 ### 🏁 Basic Example  
 ```kotlin
