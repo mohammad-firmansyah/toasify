@@ -20,13 +20,16 @@
 ### 🏁 Installation
 build.gradle.kts (:app)
 ```
+...
 	dependencies {
 	        implementation("com.github.mohammad-firmansyah:toasify:Tag")
 	}
+...
 ```
 
 settings.gradle.kts
 ```
+...
  dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
@@ -34,6 +37,7 @@ settings.gradle.kts
 			maven { url = uri("https://jitpack.io") }
 		}
 	}
+...
 ```
 
 ### 🏁 Basic Example  
