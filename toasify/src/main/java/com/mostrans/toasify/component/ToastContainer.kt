@@ -37,7 +37,7 @@ fun ToastContainer(
     }
 
     Box(
-        modifier = modifier
+        modifier = Modifier
             .zIndex(Float.MAX_VALUE)
             .fillMaxSize()
             .padding(
@@ -56,7 +56,8 @@ fun ToastContainer(
                     title = toast.title.toString(),
                     message = toast.message.toString(),
                     type = toast.type,
-                    content = toast.content
+                    content = toast.content,
+                    modifier = modifier
                 )
             }
         }
