@@ -24,6 +24,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun ToastContainer(
+    modifier : Modifier,
     position: ToastPosition = ToastPosition.Top
 ) {
     val toastState by ToastManager.toastState.collectAsState()
@@ -36,7 +37,7 @@ fun ToastContainer(
     }
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .zIndex(Float.MAX_VALUE)
             .fillMaxSize()
             .padding(
