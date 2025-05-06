@@ -24,7 +24,7 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun ToastContainer(
-    modifier : Modifier,
+    modifier : Modifier = Modifier,
     position: ToastPosition = ToastPosition.Top
 ) {
     val toastState by ToastManager.toastState.collectAsState()
