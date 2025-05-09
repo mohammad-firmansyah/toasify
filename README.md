@@ -1,6 +1,7 @@
-# 🚀 Toasify – Beautiful & Customizable Toasts for Jetpack Compose  
+# Toasify – Jetpack Compose Toast Library for Android
+Toasify is a lightweight and modern Android toast message library built with Jetpack Compose. It helps developers show clean, animated toast notifications with minimal effort. Toasify offers two smooth slide-in animations (from the top and bottom of the screen), allowing you to enhance user experience with elegant UI feedback.
 
-**Toasify** is a lightweight and elegant **Toast UI library** for Android, built with **Jetpack Compose**. It provides **beautiful, animated, and customizable toast messages** to enhance your app’s user experience.  
+Designed for Android developers using Jetpack Compose, Toasify removes the hassle of manually building custom toasts. With easy integration, full customization options (colors, icons, duration, shape), and a clean API, Toasify is perfect for apps that prioritize both performance and design consistency. 
 
 ## ✨ Features  
 - ✅ **Modern Design** – Clean and sleek toast UI  
