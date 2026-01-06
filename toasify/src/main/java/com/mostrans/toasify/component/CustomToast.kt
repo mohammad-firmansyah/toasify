@@ -212,7 +212,7 @@ fun ToastLoading(modifier: Modifier = Modifier, message: String = "Loading") {
                     text = message,
                     fontWeight = MaterialTheme.typography.titleMedium.fontWeight,
                     fontSize = MaterialTheme.typography.titleMedium.fontSize,
-                    color = Neutral5,
+                    color = MaterialTheme.colorScheme.onBackground,
 
                     )
             }

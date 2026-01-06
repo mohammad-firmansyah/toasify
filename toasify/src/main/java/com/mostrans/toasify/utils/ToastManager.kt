@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.asStateFlow
 
 object ToastManager {
     private val _toastState = MutableStateFlow<ToastData?>(null)
-    val toastState = _toastState.asStateFlow()
+    internal val toastState = _toastState.asStateFlow()
 
     fun showInfo(
         title: String? = "Info",
@@ -68,7 +68,7 @@ object ToastManager {
     }
 }
 
-data class ToastData(
+internal data class ToastData(
     val title: String? = "",
     val message: String? = "",
     val position: ToastPosition? = ToastPosition.Top,
