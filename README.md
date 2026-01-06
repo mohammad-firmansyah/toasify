@@ -8,7 +8,8 @@ Designed for Android developers using Jetpack Compose, Toasify removes the hassl
 - 🎨 **Fully Customizable** – Change colors, animations, icons, and duration  
 - ⚡ **Easy to Use** – One-line implementation for quick integration  
 - 🚀 **Lightweight & Fast** – Optimized for performance  
-- 🌙 **Dark Mode Support** – Automatically adapts to theme settings  
+- 🌙 **Dark Mode Support** – Automatically adapts to theme settings and lets you override the color scheme  
+- ❌ **Manual Dismiss** – Close the toast early with the built-in top-right close icon  
 
 ## 📸 Preview  
 
@@ -51,6 +52,9 @@ ToastManager.showInfo(
 setContent{
     ....
 
-    ToastContainer()
+    // Optionally override duration, theme, or provide a custom color scheme
+    ToastContainer(
+        autoDismissDuration = 3000L,
+        darkTheme = true // or false, or provide a custom Material3 ColorScheme
+    )
 }
-
