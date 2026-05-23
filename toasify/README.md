@@ -7,7 +7,8 @@
 - 🎨 **Fully Customizable** – Change colors, animations, icons, and duration  
 - ⚡ **Easy to Use** – One-line implementation for quick integration  
 - 🚀 **Lightweight & Fast** – Optimized for performance  
-- 🌙 **Dark Mode Support** – Automatically adapts to theme settings  
+- 🌙 **Dark Mode Support** – Automatically adapts to theme settings (or let you override the theme)  
+- ❌ **Manual Dismiss** – Close a toast any time via the built-in top-right icon  
 
 ## 📸 Preview  
 ![image](https://github.com/user-attachments/assets/a658cea1-3915-4a20-93db-d0bb8c002203)
@@ -22,4 +23,10 @@
 Toasify.show(
     message = "Hello, Jetpack Compose! 🚀",
     type = ToastType.Success
+)
+
+// Wrap your UI with the toast container (supports theme override & custom duration)
+ToastContainer(
+    autoDismissDuration = 3000L,
+    darkTheme = false // Set to true or supply a custom Material3 ColorScheme
 )

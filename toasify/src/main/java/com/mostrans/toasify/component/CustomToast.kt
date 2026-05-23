@@ -23,6 +23,7 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -54,32 +55,35 @@ fun CustomToast(
     traillingIcon: ImageVector? = null,
     modifier: Modifier = Modifier,
     content: (@Composable () -> Unit)? = null,
+    onClose: () -> Unit = {},
 ) {
     when (type) {
         ToastType.Success -> {
             ToastSuccess(
                 modifier = modifier,
                 title = title,
-                message = message
+                message = message,
+                onClose = onClose
             )
         }
 
         ToastType.Error -> {
-            ToastDanger(modifier = modifier, title = title, message = message)
+            ToastDanger(modifier = modifier, title = title, message = message, onClose = onClose)
         }
 
         ToastType.Warning -> {
-            ToastWarning(modifier = modifier, title = title, message = message)
+            ToastWarning(modifier = modifier, title = title, message = message, onClose = onClose)
         }
 
         ToastType.Default -> {
-            ToastSuccess(modifier = modifier, title = title, message = message)
+            ToastSuccess(modifier = modifier, title = title, message = message, onClose = onClose)
         }
 
         ToastType.Loading -> {
             ToastLoading(
                 modifier = modifier,
-                message = title
+                message = title,
+                onClose = onClose
             )
         }
 
@@ -94,7 +98,8 @@ fun CustomToast(
         ToastType.Info -> ToastInfo(
             modifier = modifier,
             title = title,
-            message = message
+            message = message,
+            onClose = onClose
         )
     }
 }
@@ -104,6 +109,7 @@ fun ToastSuccess(
     modifier: Modifier = Modifier,
     title: String = "Success",
     message: String = "Update Success",
+    onClose: () -> Unit = {},
 ) {
     Column(
         modifier = modifier
@@ -166,12 +172,17 @@ fun ToastSuccess(
 
 
 
-            Icon(
-                Icons.Outlined.Close,
-                contentDescription = stringResource(R.string.close_notification),
-                tint = Neutral3,
-                modifier = Modifier.size(20.dp)
-            )
+            IconButton(
+                onClick = onClose,
+                modifier = Modifier.size(32.dp)
+            ) {
+                Icon(
+                    Icons.Outlined.Close,
+                    contentDescription = stringResource(R.string.close_notification),
+                    tint = Neutral3,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
         }
 
         Spacer(
@@ -184,7 +195,11 @@ fun ToastSuccess(
 }
 
 @Composable
-fun ToastLoading(modifier: Modifier = Modifier, message: String = "Loading") {
+fun ToastLoading(
+    modifier: Modifier = Modifier,
+    message: String = "Loading",
+    onClose: () -> Unit = {},
+) {
     Column(
         modifier = modifier
             .zIndex(Float.MAX_VALUE)
@@ -221,11 +236,27 @@ fun ToastLoading(modifier: Modifier = Modifier, message: String = "Loading") {
 
 
 
-            CircularProgressIndicator(
-                color = Primary2,
-                strokeWidth = 2.dp,
-                modifier = Modifier.size(20.dp)
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                CircularProgressIndicator(
+                    color = Primary2,
+                    strokeWidth = 2.dp,
+                    modifier = Modifier.size(20.dp)
+                )
+
+                IconButton(
+                    onClick = onClose,
+                    modifier = Modifier.size(32.dp)
+                ) {
+                    Icon(
+                        Icons.Outlined.Close,
+                        contentDescription = stringResource(R.string.close_notification),
+                        tint = Neutral3,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
         }
 
     }
@@ -239,6 +270,7 @@ fun ToastInfo(
     modifier: Modifier = Modifier,
     title: String = "Info",
     message: String = "",
+    onClose: () -> Unit = {},
 ) {
 
     Column(
@@ -301,12 +333,17 @@ fun ToastInfo(
 
 
 
-            Icon(
-                Icons.Outlined.Close,
-                contentDescription = stringResource(R.string.close_notification),
-                tint = Neutral3,
-                modifier = Modifier.size(20.dp)
-            )
+            IconButton(
+                onClick = onClose,
+                modifier = Modifier.size(32.dp)
+            ) {
+                Icon(
+                    Icons.Outlined.Close,
+                    contentDescription = stringResource(R.string.close_notification),
+                    tint = Neutral3,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
         }
 
         Spacer(
@@ -323,6 +360,7 @@ fun ToastDanger(
     modifier: Modifier = Modifier,
     title: String = "Danger",
     message: String = "",
+    onClose: () -> Unit = {},
 ) {
     Column(
         modifier = modifier
@@ -384,12 +422,17 @@ fun ToastDanger(
 
 
 
-            Icon(
-                Icons.Outlined.Close,
-                contentDescription = "close notification",
-                tint = Neutral3,
-                modifier = Modifier.size(20.dp)
-            )
+            IconButton(
+                onClick = onClose,
+                modifier = Modifier.size(32.dp)
+            ) {
+                Icon(
+                    Icons.Outlined.Close,
+                    contentDescription = stringResource(R.string.close_notification),
+                    tint = Neutral3,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
         }
 
         Spacer(
@@ -407,6 +450,7 @@ fun ToastWarning(
     modifier: Modifier = Modifier,
     title: String = "Warning",
     message: String = "",
+    onClose: () -> Unit = {},
 ) {
     Column(
         modifier = modifier
@@ -468,12 +512,17 @@ fun ToastWarning(
 
 
 
-            Icon(
-                Icons.Outlined.Close,
-                contentDescription = "close notification",
-                tint = Neutral3,
-                modifier = Modifier.size(20.dp)
-            )
+            IconButton(
+                onClick = onClose,
+                modifier = Modifier.size(32.dp)
+            ) {
+                Icon(
+                    Icons.Outlined.Close,
+                    contentDescription = stringResource(R.string.close_notification),
+                    tint = Neutral3,
+                    modifier = Modifier.size(20.dp)
+                )
+            }
         }
 
         Spacer(
